@@ -14,3 +14,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Camera2D.position = $Player.position
+	if Input.is_action_just_pressed("attack"):
+		var potion = load("res://Project/potion/potion.tscn")
+		var instancedPotion = potion.instance()
+		instancedPotion.position = get_viewport().get_mouse_position()
+		add_child(instancedPotion)
