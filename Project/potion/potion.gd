@@ -21,4 +21,4 @@ func _on_Timer_timeout():
 
 
 func _on_collisionTimer_timeout():
-	$Area2D.monitorable = true
+	$shatterSound.play()

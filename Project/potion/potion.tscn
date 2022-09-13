@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Project/potion/tile_0115.png" type="Texture" id=1]
 [ext_resource path="res://Project/potion/explosion00.png" type="Texture" id=2]
 [ext_resource path="res://Project/potion/potion.gd" type="Script" id=3]
+[ext_resource path="res://Project/potion/559358__garuda1982__glass-shattered-in-container-sound-effect.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -123,6 +124,10 @@ radius = 23.0217
 
 [node name="potion" type="Node2D" groups=["potion"]]
 script = ExtResource( 3 )
+
+[node name="shatterSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 3.792
 
 [node name="collisionTimer" type="Timer" parent="."]
 wait_time = 0.8
