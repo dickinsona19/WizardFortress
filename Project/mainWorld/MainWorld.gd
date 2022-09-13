@@ -2,10 +2,11 @@ extends Node2D
 
 
 var canBuyPotions = false
+var score
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	score = 0
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,6 +14,7 @@ func _process(delta):
 	var numPotions = $Player.numOfPotions
 	$HUD/CanvasLayer/numPotions.text = " X " + str(numPotions)
 	processBuyingPotions()
+	$HUD/CanvasLayer/score.text = "Score:  "+ str(score)
 
 
 func _on_Area2D_area_entered(area):
@@ -54,7 +56,6 @@ func _on_EnemySpawner_timeout():
 	if randPosition == 3:
 		 randX = $Player.position.x + (randi() %101 + 50) 
 		 randY = $Player.position.y - (randi() %101 + 50) 
-		
 	
 	
 	
@@ -62,3 +63,4 @@ func _on_EnemySpawner_timeout():
 	var instancedEnemy = enemy.instance()
 	instancedEnemy.position = Vector2(randX,randY)
 	add_child(instancedEnemy)
+	score += 1

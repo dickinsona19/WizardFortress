@@ -1,5 +1,6 @@
 extends Node2D
 
+signal gameOver
 var numOfPotions
 var charSpeed =2
 # Called when the node enters the scene tree for the first time.
@@ -26,4 +27,11 @@ func _process(delta):
 		instancedPotion.position = get_global_mouse_position()
 		get_parent().add_child(instancedPotion)
 		numOfPotions -= 1
-	
+		
+		
+
+
+func _on_Area2D_area_entered(area):
+	if area.get_groups() != null:
+		if area.get_groups()[0]== "enemy":
+			emit_signal("gameOver")

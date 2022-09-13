@@ -28,3 +28,11 @@ margin_right = 302.0
 margin_bottom = 63.0
 text = "X"
 valign = 1
+
+[node name="score" type="Label" parent="CanvasLayer"]
+margin_left = 432.0
+margin_top = 3.0
+margin_right = 542.0
+margin_bottom = 41.0
+text = "Score: "
+valign = 1
