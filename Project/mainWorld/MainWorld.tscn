@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Project/HUD/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Project/mainWorld/tilemap_packed.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Project/mainWorld/MainWorld.gd" type="Script" id=4]
 [ext_resource path="res://Project/mainWorld/Camera2D.gd" type="Script" id=5]
 [ext_resource path="res://Project/mainWorld/tile_0096.png" type="Texture" id=6]
-[ext_resource path="res://Project/Enemy/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Project/mainWorld/415804__sunsai__mushroom-background-music.wav" type="AudioStream" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
@@ -403,9 +402,6 @@ margin_bottom = -13.5
 text = "Potion Master"
 autowrap = true
 
-[node name="Enemy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 610, 286 )
-
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 3 )]
 position = Vector2( 516, 277 )
 
@@ -426,4 +422,5 @@ autoplay = true
 [connection signal="area_entered" from="PotionMaster/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="PotionMaster/Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="mouse_entered" from="PotionMaster/Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="gameOver" from="Player" to="." method="_on_Player_gameOver"]
 [connection signal="timeout" from="EnemySpawner" to="." method="_on_EnemySpawner_timeout"]

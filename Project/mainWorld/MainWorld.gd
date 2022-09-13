@@ -64,3 +64,9 @@ func _on_EnemySpawner_timeout():
 	instancedEnemy.position = Vector2(randX,randY)
 	add_child(instancedEnemy)
 	score += 1
+
+
+func _on_Player_gameOver():
+	$HUD/CanvasLayer/Gameover.visible = true
+	$EnemySpawner.queue_free()
+	$HUD/CanvasLayer/Replay.visible = true
