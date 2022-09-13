@@ -262,7 +262,7 @@ position = Vector2( 443, 336 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
-[node name="Area2D" type="Area2D" parent="PotionMaster"]
+[node name="Area2D" type="Area2D" parent="PotionMaster" groups=["positionMaster"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PotionMaster/Area2D"]
 position = Vector2( -0.25, 0 )

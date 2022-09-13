@@ -34,7 +34,31 @@ func processBuyingPotions():
 
 
 func _on_EnemySpawner_timeout():
+	var randX
+	var randY
+	var randPosition = randi() %4
+	
+	
+	if randPosition == 0:
+		 randX = $Player.position.x + (randi() %101 + 50) 
+		 randY = $Player.position.y + (randi() %101 + 50) 
+		
+	if randPosition == 1:
+		 randX = $Player.position.x - (randi() %101 + 50) 
+		 randY = $Player.position.y - (randi() %101 + 50) 
+		
+	if randPosition == 2:
+		 randX = $Player.position.x - (randi() %101 + 50) 
+		 randY = $Player.position.y + (randi() %101 + 50) 
+		
+	if randPosition == 3:
+		 randX = $Player.position.x + (randi() %101 + 50) 
+		 randY = $Player.position.y - (randi() %101 + 50) 
+		
+	
+	
+	
 	var enemy = load("res://Project/Enemy/Enemy.tscn")
 	var instancedEnemy = enemy.instance()
-	instancedEnemy.position = Vector2(600,220)
+	instancedEnemy.position = Vector2(randX,randY)
 	add_child(instancedEnemy)
