@@ -1,27 +1,30 @@
-extends KinematicBody2D
+extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
+var numOfPotions
+var charSpeed =2
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	numOfPotions = 2
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("move_left"):
-		position.x -= 5
+		position.x -= charSpeed
 	
 	if Input.is_action_pressed("move_right"):
-		position.x +=5
+		position.x +=charSpeed
 	
 	if Input.is_action_pressed("move_up"):
-		position.y -=5
+		position.y -=charSpeed
 	if Input.is_action_pressed("move_down"):
-		position.y +=5
+		position.y +=charSpeed
 	
-
+	if Input.is_action_just_pressed("attack") and numOfPotions >0:
+		var potion = load("res://Project/potion/potion.tscn")
+		var instancedPotion = potion.instance()
+		instancedPotion.position = get_global_mouse_position()
+		get_parent().add_child(instancedPotion)
+		
+		
+	
