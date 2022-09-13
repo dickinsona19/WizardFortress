@@ -31,3 +31,10 @@ func processBuyingPotions():
 		$HUD/CanvasLayer/refillPotions.visible = true
 		if Input.is_action_just_pressed("refill"):
 			$Player.numOfPotions = 10
+
+
+func _on_EnemySpawner_timeout():
+	var enemy = load("res://Project/Enemy/Enemy.tscn")
+	var instancedEnemy = enemy.instance()
+	instancedEnemy.position = Vector2(600,220)
+	add_child(instancedEnemy)

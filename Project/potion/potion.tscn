@@ -118,13 +118,18 @@ tracks/4/keys = {
 "values": [ false, true, false ]
 }
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 17.0
+[sub_resource type="CircleShape2D" id=4]
+radius = 23.0217
 
 [node name="potion" type="Node2D" groups=["potion"]]
 script = ExtResource( 3 )
 
-[node name="Timer" type="Timer" parent="."]
+[node name="collisionTimer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+autostart = true
+
+[node name="deleteTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
@@ -149,6 +154,7 @@ anims/potionDrop = SubResource( 2 )
 [node name="Area2D" type="Area2D" parent="." groups=["potion"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="collisionTimer" to="." method="_on_collisionTimer_timeout"]
+[connection signal="timeout" from="deleteTimer" to="." method="_on_Timer_timeout"]

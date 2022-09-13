@@ -26,10 +26,4 @@ func _process(delta):
 		instancedPotion.position = get_global_mouse_position()
 		get_parent().add_child(instancedPotion)
 		numOfPotions -= 1
-		
-		
 	
-
-
-func _on_KinematicBody2D_mouse_entered():
-	print("Player")

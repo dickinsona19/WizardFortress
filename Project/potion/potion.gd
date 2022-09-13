@@ -18,3 +18,7 @@ func _ready():
 
 func _on_Timer_timeout():
 	queue_free()
+
+
+func _on_collisionTimer_timeout():
+	$Area2D.monitorable = true
