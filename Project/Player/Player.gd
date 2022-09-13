@@ -4,7 +4,7 @@ var numOfPotions
 var charSpeed =2
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	numOfPotions = 2
+	numOfPotions = 10
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +25,11 @@ func _process(delta):
 		var instancedPotion = potion.instance()
 		instancedPotion.position = get_global_mouse_position()
 		get_parent().add_child(instancedPotion)
+		numOfPotions -= 1
 		
 		
 	
+
+
+func _on_KinematicBody2D_mouse_entered():
+	print("Player")
