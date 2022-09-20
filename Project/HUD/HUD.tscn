@@ -52,10 +52,10 @@ valign = 1
 
 [node name="Replay" type="Button" parent="CanvasLayer"]
 visible = false
-margin_left = 400.0
-margin_top = 314.0
-margin_right = 543.0
-margin_bottom = 363.0
+margin_left = 404.0
+margin_top = 363.0
+margin_right = 547.0
+margin_bottom = 412.0
 text = "Replay"
 script = ExtResource( 2 )
 
@@ -68,5 +68,14 @@ text = "Coins: 0"
 align = 1
 valign = 1
 
+[node name="MainMenuButton" type="Button" parent="CanvasLayer"]
+visible = false
+margin_left = 405.0
+margin_top = 281.0
+margin_right = 544.0
+margin_bottom = 336.0
+text = "Main Menu"
+
 [connection signal="button_up" from="CanvasLayer/Replay" to="." method="_on_Replay_button_up"]
 [connection signal="button_up" from="CanvasLayer/Replay" to="CanvasLayer/Replay" method="_on_Replay_button_up"]
+[connection signal="button_up" from="CanvasLayer/MainMenuButton" to="." method="_on_MainMenuButton_button_up"]

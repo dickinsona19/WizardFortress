@@ -16,9 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_Replay_button_up():
+func _on_Button_button_up():
 	get_tree().change_scene("res://Project/mainWorld/MainWorld.tscn")
-
-
-func _on_MainMenuButton_button_up():
-	get_tree().change_scene("res://Project/TitleScreen/TitleScene.tscn")

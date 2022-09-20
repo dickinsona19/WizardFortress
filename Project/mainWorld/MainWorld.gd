@@ -73,3 +73,5 @@ func _on_Player_gameOver():
 	$Player/Area2D/CollisionShape2D.queue_free()
 	$EnemySpawner.queue_free()
 	$HUD/CanvasLayer/Replay.visible = true
+	$HUD/CanvasLayer/MainMenuButton.visible = true
+	
