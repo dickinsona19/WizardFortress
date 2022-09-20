@@ -1,4 +1,4 @@
-### WizardFortress 1.3.0
+### WizardFortress 0.3.0
 - A solution to Project 1:2 in CS 315 by Andrew Dickinson
 - Made using the Godot 3.5
 ## How to play
