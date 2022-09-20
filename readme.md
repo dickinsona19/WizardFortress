@@ -22,7 +22,7 @@
 - [X] C-5: The game starts on a title screen. Interacting with the title screen moves the player into the gameplay screen.
 - [X] B-1: The project report is complete.
 - [X] B-2: Earn one star.
-- [] A-1: Generate neither warnings nor errors at runtime.
+* [ ] A-1: Generate neither warnings nor errors at runtime.
 There are some errors, but they are "Delta" in the process method is not being used. Is this normal, if not what is the fix?
 - [X] A-2: Earn three stars.
 - [X] ⭐ When the game is over, the player can interact to take the game back to the title screen, from which the game can be played again.
