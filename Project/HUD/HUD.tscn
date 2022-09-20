@@ -59,5 +59,14 @@ margin_bottom = 363.0
 text = "Replay"
 script = ExtResource( 2 )
 
+[node name="coinsLabel" type="Label" parent="CanvasLayer"]
+margin_left = 870.0
+margin_top = 26.0
+margin_right = 994.0
+margin_bottom = 55.0
+text = "Coins: 0"
+align = 1
+valign = 1
+
 [connection signal="button_up" from="CanvasLayer/Replay" to="." method="_on_Replay_button_up"]
 [connection signal="button_up" from="CanvasLayer/Replay" to="CanvasLayer/Replay" method="_on_Replay_button_up"]

@@ -4,8 +4,11 @@ signal gameOver
 var numOfPotions
 var charSpeed =2
 var canPlayerMove
+var playerCoins
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	playerCoins = 2
 	numOfPotions = 10
 	canPlayerMove = true
 

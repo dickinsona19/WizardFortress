@@ -1,8 +1,6 @@
 extends Node2D
 var player
 
-var vector	
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,4 +19,10 @@ func _process(delta):
 func _on_Area2D_area_entered(area):
 	if area.get_groups() != null:
 		if area.get_groups()[0] =="potion":
-			queue_free()
+			$deathTimer.start()
+			
+
+
+func _on_deathTimer_timeout():
+	player.playerCoins+= 1
+	queue_free()

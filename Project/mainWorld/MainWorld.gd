@@ -15,6 +15,7 @@ func _process(delta):
 	$HUD/CanvasLayer/numPotions.text = " X " + str(numPotions)
 	processBuyingPotions()
 	$HUD/CanvasLayer/score.text = "Score:  "+ str(score)
+	$HUD/CanvasLayer/coinsLabel.text = "Coins: " + str($Player.playerCoins)
 
 
 func _on_Area2D_area_entered(area):
@@ -31,8 +32,9 @@ func processBuyingPotions():
 	$HUD/CanvasLayer/refillPotions.visible = false
 	if canBuyPotions:
 		$HUD/CanvasLayer/refillPotions.visible = true
-		if Input.is_action_just_pressed("refill"):
+		if Input.is_action_just_pressed("refill") and $Player.playerCoins > 0:
 			$Player.numOfPotions = 10
+			$Player.playerCoins -= 1
 
 
 func _on_EnemySpawner_timeout():
@@ -68,5 +70,6 @@ func _on_EnemySpawner_timeout():
 
 func _on_Player_gameOver():
 	$HUD/CanvasLayer/Gameover.visible = true
+	$Player/Area2D/CollisionShape2D.queue_free()
 	$EnemySpawner.queue_free()
 	$HUD/CanvasLayer/Replay.visible = true
