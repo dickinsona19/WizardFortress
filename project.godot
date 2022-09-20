@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="WizardFortress"
-run/main_scene="res://Project/mainWorld/MainWorld.tscn"
+run/main_scene="res://Project/TitleScreen/TitleScene.tscn"
 config/icon="res://icon.png"
 
 [gui]
